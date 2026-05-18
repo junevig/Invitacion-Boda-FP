@@ -97,7 +97,7 @@ function startCountdown() {
 }
 
 // ── SUBMIT ─────────────────────────────────────────────────
-function submit() {
+function enviarRSVP() {
   const name    = document.getElementById("name").value.trim();
   const phone   = document.getElementById("phone").value.trim();
   const message = document.getElementById("comments").value.trim();
