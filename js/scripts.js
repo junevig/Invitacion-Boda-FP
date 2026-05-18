@@ -116,43 +116,26 @@ function enviarRSVP() {
 
   const SCRIPT_URL = "https://script.google.com/macros/s/AKfycbyFq0fa7OCBo69_hoIAhCeiGCfmNNyPJrWWX4Nov4CsJ24a0xpvgqzXHbaRd09fFw-i/exec";
 
-  // Crear un iframe oculto para recibir la respuesta del form
-  let iframe = document.getElementById("hidden-iframe");
-  if (!iframe) {
-    iframe = document.createElement("iframe");
-    iframe.id   = "hidden-iframe";
-    iframe.name = "hidden-iframe";
-    iframe.style.display = "none";
-    document.body.appendChild(iframe);
-  }
-
-  // Crear form nativo temporal y enviarlo al iframe
-  const tempForm = document.createElement("form");
-  tempForm.method = "POST";
-  tempForm.action = SCRIPT_URL;
-  tempForm.target = "hidden-iframe";
-  tempForm.style.display = "none";
-
-  [["nombre", name], ["telefono", phone], ["mensaje", message]].forEach(([k, v]) => {
-    const input = document.createElement("input");
-    input.type  = "hidden";
-    input.name  = k;
-    input.value = v;
-    tempForm.appendChild(input);
-  });
-
-  document.body.appendChild(tempForm);
-  tempForm.submit();
-  document.body.removeChild(tempForm);
-
-  // Mostrar éxito después de un breve delay (el iframe tarda ~1s)
-  setTimeout(() => {
+  fetch(SCRIPT_URL, {
+    method: "POST",
+    mode: "no-cors",
+    body: new URLSearchParams({
+      nombre:   name,
+      telefono: phone,
+      mensaje:  message || "",
+    }),
+  })
+  .then(() => {
     document.getElementById("guestName").textContent = name;
     document.getElementById("rsvpForm").style.display = "none";
     document.getElementById("thankYou").classList.add("show");
     spawnPetals(18);
+  })
+  .catch(() => {
     btn.disabled = false;
-  }, 1500);
+    btn.textContent = "Confirmar Asistencia ✦";
+    alert("Error al enviar. Intenta nuevamente.");
+  });
 }
 
 // ── MUSIC ────────────────────────────────────────────────
