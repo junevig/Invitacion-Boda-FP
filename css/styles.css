@@ -501,50 +501,32 @@ body {
 ═══════════════════════════════════════ */
 .fecha-display {
   display: flex;
+  flex-direction: row;
   align-items: center;
   justify-content: center;
-  gap: 16px;
+  flex-wrap: wrap;
+  gap: 8px 14px;
   margin: 28px auto;
   max-width: 480px;
-  border-top: 1px solid rgba(201, 168, 76, 0.35);
-  border-bottom: 1px solid rgba(201, 168, 76, 0.35);
-  padding: 18px 0;
+  border-top: 1px solid rgba(201,168,76,.35);
+  border-bottom: 1px solid rgba(201,168,76,.35);
+  padding: 18px 12px;
 }
-.fecha-lateral {
-  font-family: "Cormorant Garamond", serif;
-  font-size: clamp(18px, 2.5vw, 16px);
-  letter-spacing: 2px;
-  text-transform: uppercase;
-  color: var(--ink);
-  flex: 1;
-  text-align: center;
-  font-weight: 600;
-}
-.fecha-centro {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  line-height: 1;
-}
-.fecha-mes {
-  font-family: "Cormorant Garamond", serif;
-  font-size: 17px;
-  color: var(--ink);
-  letter-spacing: 3px;
-  text-transform: uppercase;
-}
-.fecha-dia {
+.fecha-lateral,
+.fecha-dia,
+.fecha-mes,
+.fecha-anio,
+.fecha-sep {
   font-family: "Playfair Display", serif;
-  font-size: clamp(52px, 10vw, 76px);
+  font-size: clamp(18px, 4vw, 24px);
   color: var(--ink);
   font-weight: 500;
   line-height: 1;
+  letter-spacing: 1px;
 }
-.fecha-anio {
-  font-family: "Cormorant Garamond", serif;
-  font-size: 25px;
-  color: var(--ink);
-  letter-spacing: 3px;
+.fecha-sep {
+  color: var(--gold);
+  font-weight: 300;
 }
 
 /* ── Ceremonia ── */
