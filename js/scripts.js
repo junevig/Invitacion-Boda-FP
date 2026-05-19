@@ -114,7 +114,7 @@ function enviarRSVP() {
   btn.disabled = true;
   btn.textContent = "Enviando…";
 
-  const SCRIPT_URL = "https://script.google.com/macros/s/AKfycbyFq0fa7OCBo69_hoIAhCeiGCfmNNyPJrWWX4Nov4CsJ24a0xpvgqzXHbaRd09fFw-i/exec";
+  const SCRIPT_URL = "https://script.google.com/macros/s/AKfycbwbo-3z_MdAXm56SucsbVKbnhfN3gcIrR9bwmWi7WQKATt6SnJugk7ravkUio1pacCY/exec";
 
   fetch(SCRIPT_URL, {
     method: "POST",
