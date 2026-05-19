@@ -1029,3 +1029,32 @@ textarea.fctrl {
     font-size: 14px;
   }
 }
+
+.btn-regalo {
+  display: inline-block;
+  margin-top: 18px;
+  padding: 12px 24px;
+  background: linear-gradient(135deg, var(--gold), var(--gold-dark));
+  color: #fff;
+  border-radius: 2px;
+  font-family: "Cormorant Garamond", serif;
+  font-size: 15px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  text-decoration: none;
+  cursor: pointer;
+  box-shadow: 0 4px 14px rgba(79,94,42,.3);
+  transition: transform 0.25s, box-shadow 0.25s;
+  position: relative;
+  overflow: hidden;
+}
+.btn-regalo::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(135deg, rgba(255,255,255,.15) 0%, transparent 55%);
+}
+.btn-regalo:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 7px 20px rgba(79,94,42,.4);
+}
