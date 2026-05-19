@@ -186,3 +186,20 @@ function startArp() {
     setTimeout(next, 530);
   })();
 }
+
+// ── MAPAS ────────────────────────────────────────────────
+function abrirModal(id) {
+  const modal = document.getElementById(id);
+  modal.style.display = "flex";
+  document.body.style.overflow = "hidden";
+}
+function cerrarModal(id) {
+  document.getElementById(id).style.display = "none";
+}
+// cerrar al hacer clic fuera del mapa
+document.addEventListener("click", function(e) {
+  ["modalIglesia", "modalRecepcion"].forEach(id => {
+    const modal = document.getElementById(id);
+    if (e.target === modal) cerrarModal(id);
+  });
+});

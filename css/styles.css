@@ -550,7 +550,6 @@ body {
 /* ── Ceremonia ── */
 .ceremonia-info {
   text-align: center;
-  margin: 18px 0;
 }
 .ceremonia-info p {
   font-family: "Lora", serif;
@@ -958,6 +957,26 @@ textarea.fctrl {
     opacity: 1;
     transform: translateY(0);
   }
+}
+
+.btn-mapa {
+  display: inline-block;
+  margin-top: 12px;
+  padding: 10px 22px;
+  background: transparent;
+  border: 1px solid rgba(122,140,74,.5);
+  border-radius: 2px;
+  font-family: "Cormorant Garamond", serif;
+  font-size: 14px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: var(--ink);
+  cursor: pointer;
+  transition: background 0.25s, color 0.25s;
+  margin-bottom: 8px;
+}
+.btn-mapa:hover {
+  background: rgba(122,140,74,.12);
 }
 
 /* ═══════════════════════════════════════
